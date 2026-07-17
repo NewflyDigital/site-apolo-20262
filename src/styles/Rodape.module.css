@@ -1,0 +1,169 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 7rem 2rem 2rem;
+  background: #fff;
+  border-top: 1px solid #ececec;
+}
+
+.interno {
+  width: 100%;
+  max-width: 90rem;
+}
+
+.topo {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #ececec;
+}
+
+.colunaLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo {
+  width: 100%;
+  max-width: 220px;
+  margin-bottom: 2rem;
+}
+
+.colunaLogo h2 {
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  line-height: 1.05;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 1.5rem;
+  max-width: 520px;
+}
+
+.colunaLogo p {
+  max-width: 500px;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #666;
+  margin-bottom: 2.5rem;
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background: #572aa1;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: 0.3s;
+  box-shadow: 0 12px 28px rgba(87, 42, 161, 0.18);
+}
+
+.botao:hover {
+  background: #6d35cf;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(132, 56, 255, 0.24);
+}
+
+.coluna {
+  display: flex;
+  flex-direction: column;
+}
+
+.coluna h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+  color: #111;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.coluna h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 38px;
+  height: 3px;
+  background: #8438ff;
+  border-radius: 999px;
+}
+
+.coluna a,
+.coluna p {
+  color: #666;
+  text-decoration: none;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  transition: 0.3s;
+}
+
+.coluna a:hover {
+  color: #572aa1;
+  transform: translateX(4px);
+}
+
+.bottom {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.bottom p {
+  font-size: 0.92rem;
+  color: #888;
+}
+
+.bottom a {
+  color: #572aa1;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.bottom a:hover {
+  color: #8438ff;
+}
+
+@media (max-width: 1100px) {
+  .topo {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 5rem 1.5rem 2rem;
+  }
+
+  .topo {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .colunaLogo h2 {
+    font-size: 2.4rem;
+  }
+
+  .colunaLogo p {
+    font-size: 1rem;
+  }
+
+  .botao {
+    width: 100%;
+  }
+
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,294 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 720px;
+  padding: 0;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+}
+
+.background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  transform: scale(1.08);
+  animation: zoomHero 2.4s var(--ease-out-expo) forwards;
+}
+
+.overlayOne,
+.overlayTwo,
+.overlayThree {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+}
+
+.overlayOne {
+  background: linear-gradient(
+    90deg,
+    #111318 0%,
+    rgba(17, 19, 24, 0.6) 55%,
+    transparent 100%
+  );
+}
+
+.overlayTwo {
+  background: linear-gradient(
+    90deg,
+    #111318 0%,
+    rgba(17, 19, 24, 0.75) 45%,
+    transparent 100%
+  );
+}
+
+.overlayThree {
+  background: linear-gradient(
+    180deg,
+    rgba(17, 19, 24, 1) 0%,
+    transparent 45%,
+    rgba(17, 19, 24, 0.4) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: auto;
+  padding: 10rem 8rem;
+}
+
+.box {
+  max-width: 860px;
+}
+
+.eyebrow {
+  margin-bottom: 2rem;
+  color: #6ac17b;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  animation: fadeUp 0.8s 0.3s both;
+}
+
+.box h1 {
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  animation: fadeUp 1s 0.5s both;
+}
+
+.box h1 span {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.description {
+  max-width: 640px;
+  margin: 3rem 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.125rem;
+  line-height: 1.8;
+  animation: fadeUp 0.9s 0.8s both;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  animation: fadeUp 0.9s 1s both;
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  height: 60px;
+  padding: 0 2.25rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  transition:
+    background 0.35s,
+    color 0.35s,
+    border-color 0.35s,
+    transform 0.35s;
+}
+
+.primary {
+  background: #fff;
+  color: var(--ink);
+}
+
+.primary:hover {
+  background: var(--gradient-brand);
+  color: #fff;
+  transform: scale(1.02);
+}
+
+.primary:active {
+  transform: scale(0.95);
+}
+
+.primary span {
+  transition: transform 0.35s;
+}
+
+.primary:hover span {
+  transform: rotate(45deg);
+}
+
+.secondary {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(18px);
+}
+
+.secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.secondary span {
+  transition: transform 0.35s;
+}
+
+.secondary:hover span {
+  transform: translateX(5px);
+}
+
+.scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 2.5rem;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  z-index: 20;
+  animation: fade 0.8s 1.5s both;
+}
+
+.scroll span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+}
+
+.arrow {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes zoomHero {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .box h1 {
+    font-size: clamp(3rem, 9vw, 5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 640px;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin: 2.5rem 0;
+  }
+}
