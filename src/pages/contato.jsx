@@ -1,8 +1,9 @@
 import * as React from "react";
+import Link from "next/link";
 import Menu from "../components/menu";
 import Rodape from "../components/rodape";
 import styles from "../styles/Contato.module.css";
-import Link from "next/link";
+
 import Box from "@mui/material/Box";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -34,6 +35,7 @@ export default function Contato() {
   const [nome, setNome] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [setor, setSetor] = React.useState("");
+  const [empresa, setEmpresa] = React.useState("");
   const [objetivo, setObjetivo] = React.useState("");
   const [mensagem, setMensagem] = React.useState("");
   const [telefone, setTelefone] = React.useState("");
@@ -63,6 +65,7 @@ export default function Contato() {
       telefone,
       email,
       objetivo,
+      empresa,
       mensagem,
     })
       .then(() => {
@@ -76,6 +79,7 @@ export default function Contato() {
         setNome("");
         setEmail("");
         setSetor("");
+        setEmpresa("");
         setMensagem("");
         setDisableButton(false);
       });
@@ -106,282 +110,297 @@ export default function Contato() {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Menu />
-      <section className={styles.background3}>
-        <div className={styles.heroContent}>
-          <span>CONTATO</span>
+    <>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Menu />
 
-          <h1>Vamos conversar sobre seu projeto.</h1>
+        {/* HERO */}
 
-          <p>
-            Conte para nós seus objetivos e nossa equipe retornará com a melhor
-            estratégia para sua empresa.
-          </p>
-        </div>
-      </section>
+        <section className={styles.hero}>
+          <video autoPlay muted loop playsInline className={styles.heroVideo}>
+            <source src="/static/videos/contato.mp4" type="video/mp4" />
+          </video>
 
-      <section className={`${styles.background} mt-[6rem]`}>
-        <div className={styles.interno2}>
-          <div className={styles.box2}>
-            <img src="/static/images/telefone.png" />
-            <h3>Quer falar por telefone?</h3>
-            <p>+55 54 9.8116 8850</p>
-          </div>
-          <div className={styles.box2}>
-            <img src="/static/images/email.png" />
-            <h3>Nosso E-mail</h3>
-            <p>contato@agenciaal.com.br</p>
-          </div>
-          <div className={styles.box2}>
-            <img src="/static/images/mapa.png" />
-            <h3>Te esperamos com café.</h3>
-            <p>
-              Rua Angelo Agostini, B. Pioneiro <br />
-              CEP 95042-090 | Caxias do Sul
-            </p>
-          </div>
-        </div>
-      </section>
-      <section className={`${styles.background} my-[6rem]`}>
-        <div className={styles.interno}>
-          <div
-            className={styles.box_row}
-            style={{ justifyContent: "flex-start" }}
-          >
-            <div className={styles.box}>
-              <h2 className={styles.titulo}>
-                Nossa equipe está pronta para ajudar você.
-              </h2>
-              <p>
-                Atuamos unindo estratégia, design, tecnologia e comunicação para
-                ajudar empresas a fortalecer sua presença digital, gerar
-                autoridade e conquistar novos clientes.
-              </p>
-            </div>
+          <div className={styles.overlay}></div>
 
-            <div className={` ${styles.mobile}`}>
-              <div
-                className={` ${styles.box}`}
-                style={{ alignItems: "flex-start" }}
-              >
-                <h3>Deixe um recado!</h3>
-                <p className={styles.p} style={{ marginBottom: "2rem" }}>
-                  Nossa equipe irá avalia seu recado e reponder o mais breve
-                  possível
+          <div className="container">
+            <div className={styles.heroGrid}>
+              <div className={styles.heroLeft}>
+                <span className={styles.eyebrow}>— Contato</span>
+
+                <h1>
+                  Vamos desenvolver
+                  <span> sua próxima solução.</span>
+                </h1>
+
+                <p>
+                  Nossa equipe técnica está preparada para entender seu projeto,
+                  indicar os melhores processos produtivos e transformar ideias
+                  em soluções de alta performance para a indústria.
                 </p>
 
-                <div className={styles.formCard}>
-                  <Box
-                    component="form"
-                    sx={{ width: "100%" }}
-                    noValidate
-                    autoComplete="off"
-                    onSubmit={handleSubmit}
-                  >
-                    <div className="w-full flex flex-row sm:flex-nowrap flex-wrap justify-between items-center">
-                      <TextField
-                        value={nome || ""}
-                        type="text"
-                        margin="normal"
-                        required
-                        fullWidth
-                        id="nome"
-                        label="Nome"
-                        name="nome"
-                        autoFocus
-                        onChange={(event) => setNome(event.target.value)}
-                        sx={{ marginLeft: ".5rem", marginRight: ".5rem" }}
-                        onFocus={() => {
-                          const newError = { ...error };
-                          newError.nome = false;
-                          setError(newError);
-                        }}
-                        error={error.nome}
-                        helperText={error.nome ? "campo obrigatório" : ""}
-                      />
-                      <TextField
-                        value={telefone || ""}
-                        type="tel"
-                        margin="normal"
-                        required
-                        fullWidth
-                        id="telefone"
-                        label="WhatsApp"
-                        name="telefone"
-                        onChange={(event) => setTelefone(event.target.value)}
-                        sx={{ marginLeft: ".5rem", marginRight: ".5rem" }}
-                        onFocus={() => {
-                          const newError = { ...error };
-                          newError.telefone = false;
-                          setError(newError);
-                        }}
-                        error={error.telefone}
-                        helperText={error.telefone ? "campo obrigatório" : ""}
-                      />
-                    </div>
-                    <div className="w-full flex flex-row sm:flex-nowrap flex-wrap justify-between items-center mb-5">
-                      <TextField
-                        value={email || ""}
-                        type="text"
-                        margin="normal"
-                        required
-                        fullWidth
-                        id="email"
-                        label="E-Mail"
-                        name="email"
-                        onChange={(event) => setEmail(event.target.value)}
-                        sx={{ marginLeft: ".5rem", marginRight: ".5rem" }}
-                        onFocus={() => {
-                          const newError = { ...error };
-                          newError.email = false;
-                          setError(newError);
-                        }}
-                        error={error.email}
-                        helperText={error.email ? "campo obrigatório" : ""}
-                      />
-                    </div>
-                    <div className="w-full flex flex-row sm:flex-nowrap flex-wrap justify-between items-center">
-                      <div
-                        className="select-input w-full"
-                        style={{ marginLeft: ".5rem", marginRight: ".5rem" }}
-                      >
-                        <FormControl fullWidth>
-                          <InputLabel id="select-setor-label">
-                            Qual seu principal objetivo? *
-                          </InputLabel>
-                          <Select
-                            labelId="select-setor-label"
-                            id="objetivo"
-                            name="objetivo"
-                            value={objetivo || ""}
-                            label="Qual seu principal objetivo? *"
-                            required
-                            error={error.objetivo}
-                            onChange={(event) =>
-                              setObjetivo(event.target.value)
-                            }
-                            onFocus={() => {
-                              const newError = { ...error };
-                              newError.objetivo = false;
-                              setError(newError);
-                            }}
-                          >
-                            <MenuItem value="Conseguir mais clientes">
-                              Conseguir mais clientes
-                            </MenuItem>
+                <div className={styles.heroButtons}>
+                  <Link href="#formulario" className={styles.primaryButton}>
+                    Solicitar orçamento
+                  </Link>
 
-                            <MenuItem value="Aumentar vendas">
-                              Aumentar vendas
-                            </MenuItem>
+                  <Link href="/empresa" className={styles.secondaryButton}>
+                    Conheça a Apolo
+                  </Link>
+                </div>
+              </div>
 
-                            <MenuItem value="Melhorar presença digital">
-                              Melhorar presença digital
-                            </MenuItem>
+              <div className={styles.heroRight}>
+                <div className={styles.contactCard}>
+                  <img src="/static/images/telefone.png" />
 
-                            <MenuItem value="Criar um site">
-                              Criar um site
-                            </MenuItem>
+                  <small>Telefone</small>
 
-                            <MenuItem value="Fortalecer a marca">
-                              Fortalecer a marca
-                            </MenuItem>
+                  <h3>(54) 3268-8300</h3>
 
-                            <MenuItem value="Aparecer no Google">
-                              Aparecer no Google
-                            </MenuItem>
+                  <p>Atendimento Comercial</p>
+                </div>
 
-                            <MenuItem value="Automatizar processos">
-                              Automatizar processos
-                            </MenuItem>
+                <div className={styles.contactCard}>
+                  <img src="/static/images/email.png" />
 
-                            <MenuItem value="Não sei qual a melhor solução">
-                              Não sei qual a melhor solução
-                            </MenuItem>
-                          </Select>
-                          {error.setor && (
-                            <p className="select-error" id="setor-helper-text">
-                              campo obrigatório
-                            </p>
-                          )}
-                        </FormControl>
-                      </div>
-                    </div>
-                    <div style={{ marginLeft: ".5rem", marginRight: ".5rem" }}>
-                      <TextField
-                        value={mensagem || ""}
-                        type="text"
-                        margin="normal"
-                        fullWidth
-                        id="mensagem"
-                        label="Mensagem"
-                        name="mensagem"
-                        multiline
-                        rows={4}
-                        onChange={(event) => setMensagem(event.target.value)}
-                      />
-                    </div>
-                    <div style={{ marginRight: ".5rem" }}>
-                      <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        className="bg-[#28B3C7] hover:bg-[#1b7c8a] text-white mx-[.5rem] p-4 mt-2 font-bold border-0  cursor-pointer"
-                        sx={{ marginLeft: 0, marginRight: 0 }}
-                        disabled={disableButton}
-                      >
-                        ENVIAR AGORA
-                      </Button>
-                    </div>
-                  </Box>
+                  <small>E-mail</small>
+
+                  <h3>contato@apolotec.com.br</h3>
+
+                  <p>Retorno rápido.</p>
+                </div>
+
+                <div className={styles.contactCard}>
+                  <img src="/static/images/mapa.png" />
+
+                  <small>Localização</small>
+
+                  <h3>Farroupilha • RS</h3>
+
+                  <p>Parque fabril de 5.000m².</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section className={styles.cta}>
-        <h2>Prefere falar diretamente pelo WhatsApp?</h2>
+        </section>
 
-        <a
-          href="https://wa.me/5554981168850"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Iniciar conversa
-        </a>
-      </section>
+        {/* INTRO */}
 
-      <Rodape />
-      <Snackbar
-        open={showAlertSuccess}
-        autoHideDuration={6000}
-        onClose={() => setShowAlertSuccess(false)}
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-      >
-        <Alert
+        <section className={styles.intro}>
+          <div className="container">
+            <div className={styles.introGrid}>
+              <div>
+                <span className={styles.eyebrow}>
+                  — Atendimento Especializado
+                </span>
+
+                <h2>
+                  Desenvolvemos projetos para as indústrias mais exigentes.
+                </h2>
+
+                <p>
+                  Atuamos lado a lado com nossos clientes desde a engenharia do
+                  produto até a produção seriada, oferecendo tecnologia,
+                  confiabilidade e capacidade produtiva para atender projetos de
+                  pequeno, médio e grande porte.
+                </p>
+              </div>
+
+              <div className={styles.introImage}>
+                <img src="/static/images/global-campus.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ================= FORMULÁRIO ================= */}
+
+        <section id="formulario" className={styles.contactSection}>
+          <div className="container">
+            <div className={styles.contactGrid}>
+              <div className={styles.contactInfo}>
+                <span className={styles.eyebrow}>
+                  — Fale com nossos especialistas
+                </span>
+
+                <h2>Estamos prontos para atender seu projeto.</h2>
+
+                <p>
+                  Conte um pouco sobre sua necessidade. Nossa equipe comercial
+                  analisará seu projeto e retornará com a melhor solução para
+                  sua empresa.
+                </p>
+
+                <div className={styles.infoList}>
+                  <div className={styles.infoItem}>
+                    <h4>Telefone</h4>
+                    <span>(54) 3268-8300</span>
+                  </div>
+
+                  <div className={styles.infoItem}>
+                    <h4>WhatsApp</h4>
+                    <span>(54) 9 9999-9999</span>
+                  </div>
+
+                  <div className={styles.infoItem}>
+                    <h4>E-mail</h4>
+                    <span>contato@apolotec.com.br</span>
+                  </div>
+
+                  <div className={styles.infoItem}>
+                    <h4>Endereço</h4>
+                    <span>Farroupilha • Rio Grande do Sul</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.formCard}>
+                <span className={styles.formTag}>Solicite um orçamento</span>
+
+                <h3>Envie sua mensagem</h3>
+
+                <form onSubmit={handleSubmit}>
+                  <div className={styles.row}>
+                    <TextField
+                      value={nome}
+                      label="Nome"
+                      fullWidth
+                      required
+                      onChange={(e) => setNome(e.target.value)}
+                    />
+
+                    <TextField
+                      value={telefone}
+                      label="Telefone"
+                      fullWidth
+                      required
+                      onChange={(e) => setTelefone(e.target.value)}
+                    />
+                  </div>
+
+                  <div className={styles.row}>
+                    <TextField
+                      value={email}
+                      label="E-mail"
+                      fullWidth
+                      required
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+
+                    <TextField
+                      value={empresa}
+                      label="Empresa"
+                      fullWidth
+                      onChange={(e) => setEmpresa(e.target.value)}
+                    />
+                  </div>
+
+                  <FormControl fullWidth className={styles.select}>
+                    <InputLabel>Segmento</InputLabel>
+
+                    <Select
+                      value={objetivo}
+                      label="Segmento"
+                      onChange={(e) => setObjetivo(e.target.value)}
+                    >
+                      <MenuItem value="Agrícola">Agrícola</MenuItem>
+
+                      <MenuItem value="Automotivo">Automotivo</MenuItem>
+
+                      <MenuItem value="Implementos Rodoviários">
+                        Implementos Rodoviários
+                      </MenuItem>
+
+                      <MenuItem value="Linha Branca">Linha Branca</MenuItem>
+
+                      <MenuItem value="Outro">Outro segmento</MenuItem>
+                    </Select>
+                  </FormControl>
+
+                  <TextField
+                    value={mensagem}
+                    label="Mensagem"
+                    multiline
+                    rows={6}
+                    fullWidth
+                    onChange={(e) => setMensagem(e.target.value)}
+                    sx={{ marginTop: "24px" }}
+                  />
+
+                  <button type="submit" className={styles.submitButton}>
+                    Enviar mensagem
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ================= CTA ================= */}
+
+        <section className={styles.cta}>
+          <div className="container">
+            <div className={styles.ctaBox}>
+              <span className={styles.eyebrow}>— Atendimento Comercial</span>
+
+              <h2>
+                Vamos conversar sobre
+                <span> seu próximo projeto.</span>
+              </h2>
+
+              <p>
+                Nossa equipe está pronta para entender sua necessidade e
+                desenvolver a melhor solução para sua empresa.
+              </p>
+
+              <div className={styles.ctaButtons}>
+                <Link
+                  href="https://wa.me/5554999999999"
+                  className={styles.primary}
+                >
+                  Solicitar orçamento
+                </Link>
+
+                <Link href="/" className={styles.secondary}>
+                  Conheça a Apolo
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <Rodape />
+        <Snackbar
+          open={showAlertSuccess}
+          autoHideDuration={6000}
           onClose={() => setShowAlertSuccess(false)}
-          severity="success"
-          sx={{ width: "100%" }}
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         >
-          Seu contato foi enviado com sucesso!
-        </Alert>
-      </Snackbar>
-      <Snackbar
-        open={showAlertDanger}
-        autoHideDuration={6000}
-        onClose={() => setShowAlertDanger(false)}
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-      >
-        <Alert
+          <Alert
+            onClose={() => setShowAlertSuccess(false)}
+            severity="success"
+            sx={{ width: "100%" }}
+          >
+            Seu contato foi enviado com sucesso!
+          </Alert>
+        </Snackbar>
+        <Snackbar
+          open={showAlertDanger}
+          autoHideDuration={6000}
           onClose={() => setShowAlertDanger(false)}
-          severity="warning"
-          sx={{ width: "100%" }}
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         >
-          Não foi possível enviar o contato!
-        </Alert>
-      </Snackbar>
-    </ThemeProvider>
+          <Alert
+            onClose={() => setShowAlertDanger(false)}
+            severity="warning"
+            sx={{ width: "100%" }}
+          >
+            Não foi possível enviar o contato!
+          </Alert>
+        </Snackbar>
+      </ThemeProvider>
+    </>
   );
 }

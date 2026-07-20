@@ -16,10 +16,7 @@ import CTA from "../components/Home/CTA";
 export default function Home() {
   return (
     <>
-      {/*
-    
       <Menu />
-    */}
 
       <a id="banner"></a>
 

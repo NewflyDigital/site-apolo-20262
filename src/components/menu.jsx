@@ -1,138 +1,153 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "../styles/Menu.module.css";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+
+import styles from "../styles/menu.module.css";
 
 const NAV = [
   {
     label: "Institucional",
+    href: "/empresa",
     sub: "Conheça a Apolo",
     mega: {
       columns: [
-        { links: ["A Empresa", "Grupo Marcopolo", "Missão e Valores"] },
         {
           links: [
-            "Certificações ISO 9001",
-            "Certificações ISO 14001",
-            "Qualidade",
+            { label: "A Empresa", href: "/empresa#a-empresa" },
+            { label: "Grupo Marcopolo", href: "/empresa#grupo-marcopolo" },
+            { label: "Missão e Valores", href: "/empresa#missao" },
           ],
         },
-        { links: ["Responsabilidade", "Trabalhe Conosco"] },
+        {
+          links: [
+            {
+              label: "Certificações ISO 9001",
+              href: "/empresa#iso9001",
+            },
+            {
+              label: "Certificações ISO 14001",
+              href: "/empresa#iso14001",
+            },
+            {
+              label: "Qualidade",
+              href: "/empresa#qualidade",
+            },
+          ],
+        },
+        {
+          links: [
+            {
+              label: "Responsabilidade",
+              href: "/empresa#responsabilidade",
+            },
+            {
+              label: "Trabalhe Conosco",
+              href: "/empresa#trabalhe-conosco",
+            },
+          ],
+        },
       ],
     },
   },
+
   {
     label: "Serviços",
+    href: "/servicos",
     sub: "Da eficiência ao molde",
     mega: {
       columns: [
-        { links: ["Injeção", "Try-Out", "Montagem"] },
-        { links: ["Produção", "Produtos", "Ferramental"] },
-        { links: ["Engenharia", "Automação"] },
+        {
+          links: [
+            { label: "Injeção", href: "/servicos#injecao" },
+            { label: "Try-Out", href: "/servicos#tryout" },
+            { label: "Montagem", href: "/servicos#montagem" },
+          ],
+        },
+        {
+          links: [
+            { label: "Produção", href: "/servicos#producao" },
+            { label: "Produtos", href: "/servicos#produtos" },
+            { label: "Ferramental", href: "/servicos#ferramental" },
+          ],
+        },
+        {
+          links: [
+            { label: "Engenharia", href: "/servicos#engenharia" },
+            { label: "Automação", href: "/servicos#automacao" },
+          ],
+        },
       ],
     },
   },
+
   {
     label: "Aplicações",
+    href: "/aplicacoes",
     sub: "Setores atendidos",
     mega: {
       columns: [
-        { links: ["Agrícola", "Automotivo", "Implementos Rodoviários"] },
         {
-          links: ["Resistência mecânica", "Fadiga e Durabilidade", "Segurança"],
+          links: [
+            { label: "Agrícola", href: "/aplicacoes#agricola" },
+            { label: "Automotivo", href: "/aplicacoes#automotivo" },
+            {
+              label: "Implementos Rodoviários",
+              href: "/aplicacoes#implementos",
+            },
+          ],
         },
-        { links: ["Conforto", "Instrumentação", "Escoamento de Fluidos"] },
+        {
+          links: [
+            {
+              label: "Resistência mecânica",
+              href: "/aplicacoes#resistencia",
+            },
+            {
+              label: "Fadiga e Durabilidade",
+              href: "/aplicacoes#fadiga",
+            },
+            {
+              label: "Segurança",
+              href: "/aplicacoes#seguranca",
+            },
+          ],
+        },
+        {
+          links: [
+            {
+              label: "Conforto",
+              href: "/aplicacoes#conforto",
+            },
+            {
+              label: "Instrumentação",
+              href: "/aplicacoes#instrumentacao",
+            },
+            {
+              label: "Escoamento de Fluidos",
+              href: "/aplicacoes#escoamento",
+            },
+          ],
+        },
       ],
     },
   },
+
   {
     label: "Marco 3D",
+    href: "/marco-3d",
     sub: "Impressão 3D",
   },
+
   {
     label: "Contato",
+    href: "/contato",
     sub: "Fale com a Apolo",
   },
 ];
 
-function SearchIcon() {
-  return (
-    <svg
-      width="18"
-      height="18"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <circle cx="11" cy="11" r="7" />
-      <path d="M20 20l-3.5-3.5" />
-    </svg>
-  );
-}
-
-function MenuIcon() {
-  return (
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <path d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  );
-}
-
-function CloseIcon() {
-  return (
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <path d="M18 6L6 18M6 6l12 12" />
-    </svg>
-  );
-}
-
-function MapIcon() {
-  return (
-    <svg
-      width="18"
-      height="18"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <path d="M12 21s7-6 7-12a7 7 0 10-14 0c0 6 7 12 7 12z" />
-      <circle cx="12" cy="9" r="2.5" />
-    </svg>
-  );
-}
-
-function ArrowIcon() {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <path d="M7 17L17 7M7 7h10v10" />
-    </svg>
-  );
-}
-
-export default function Menu() {
+export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [openIndex, setOpenIndex] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -144,7 +159,9 @@ export default function Menu() {
 
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -153,125 +170,232 @@ export default function Menu() {
 
   const solid = scrolled || openIndex !== null;
   const active = openIndex !== null ? NAV[openIndex] : null;
+
   return (
     <>
       <header
         className={`${styles.header} ${
-          solid ? styles.solid : styles.transparent
+          solid ? styles.headerSolid : styles.headerTransparent
         }`}
         onMouseLeave={() => setOpenIndex(null)}
       >
-        <div className={styles.container}>
-          <a href="/">
+        <div className={`container ${styles.inner}`}>
+          <Link href="/" className={styles.logo}>
             <img
-              src="/static/images/apolo.png"
+              src={
+                solid
+                  ? "/static/images/Logo-Horizontal.png"
+                  : "/static/images/Logo-Horizontal-branco.png"
+              }
               alt="Apolo"
-              className={`${styles.logo} ${!solid ? styles.logoLight : ""}`}
+              className={styles.logoImage}
             />
-          </a>
-
-          <nav className={styles.nav}>
+          </Link>
+          <nav className={styles.desktopNav}>
             {NAV.map((item, index) => {
               const activeItem = openIndex === index;
 
               return (
-                <button
+                <Link
                   key={item.label}
-                  onMouseEnter={() => setOpenIndex(item.mega ? index : null)}
-                  onClick={() =>
-                    setOpenIndex(item.mega && !activeItem ? index : null)
-                  }
-                  className={`${styles.navButton} ${
-                    solid ? styles.darkText : styles.lightText
-                  }`}
+                  href={item.href}
+                  className={`${styles.navButton}
+  ${solid ? styles.navSolid : styles.navTransparent}
+  ${activeItem ? styles.navActive : ""}`}
+                  onMouseEnter={() => {
+                    if (item.mega) {
+                      setOpenIndex(index);
+                    } else {
+                      setOpenIndex(null);
+                    }
+                  }}
                 >
                   {item.label}
 
-                  {activeItem && <span className={styles.activeLine}></span>}
-                </button>
+                  <span
+                    className={`${styles.navLine} ${
+                      activeItem ? styles.navLineActive : ""
+                    }`}
+                  />
+                </Link>
               );
             })}
           </nav>
 
           <div className={styles.actions}>
-            <button className={styles.buttonPrimary}>
-              <MapIcon />
-              Distribuidores
+            <button className={styles.distributorsButton}>
+              <img
+                src="/static/images/location.png"
+                alt=""
+                className={styles.icon}
+              />
+              <span>Distribuidores</span>
+            </button>
+            {/*
+            bOTÃO PROCURA
+            <button className={styles.searchButton} aria-label="Buscar">
+              <img
+                src="/static/images/icone.png"
+                alt=""
+                className={styles.icon}
+              />
             </button>
 
-            <button className={styles.iconButton}>
-              <SearchIcon />
-            </button>
-
+            BOTÃO PT-BR
+            
             <button
-              className={`${styles.language} ${
-                !solid ? styles.languageLight : ""
+              className={`${styles.languageButton} ${
+                solid ? styles.languageDark : styles.languageLight
               }`}
             >
-              PT
+              <img
+                src="/static/images/icone.png"
+                alt=""
+                className={styles.icon}
+              />
+              <span>PT</span>
             </button>
+            */}
 
             <button
-              className={styles.mobileButton}
+              className={`${styles.mobileButton} ${
+                solid ? styles.mobileDark : styles.mobileLight
+              }`}
               onClick={() => setMobileOpen(true)}
             >
-              <MenuIcon />
+              <img
+                src="/static/images/icone.png"
+                alt="Menu"
+                className={styles.icon}
+              />
             </button>
           </div>
-        </div>
 
-        {active?.mega && (
-          <div className={styles.mega}>
-            <div className={styles.megaContainer}>
-              <div>
-                <h3 className={styles.megaTitle}>{active.label}</h3>
+          <AnimatePresence>
+            {active?.mega && (
+              <motion.div
+                key={active.label}
+                initial={{
+                  opacity: 0,
+                  y: -8,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                exit={{
+                  opacity: 0,
+                  y: -8,
+                }}
+                transition={{
+                  duration: 0.25,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className={styles.megaMenu}
+              >
+                <div className={`container ${styles.megaContainer}`}>
+                  <div className={styles.megaLeft}>
+                    <h3>{active.label}</h3>
 
-                <p className={styles.megaSubtitle}>{active.sub}</p>
-              </div>
+                    <p>{active.sub}</p>
 
-              <div className={styles.columns}>
-                {active.mega.columns.map((column, i) => (
-                  <ul key={i} className={styles.list}>
-                    {column.links.map((link) => (
-                      <li key={link}>
-                        <a href="#">
-                          {link}
-                          <ArrowIcon />
-                        </a>
-                      </li>
+                    <Link href={active.href} className={styles.sectionLink}>
+                      Ir para esta seção
+                      <img
+                        src="/static/images/icone.png"
+                        alt=""
+                        className={styles.arrowIcon}
+                      />
+                    </Link>
+                  </div>
+
+                  <div className={styles.megaRight}>
+                    {active.mega.columns.map((column, columnIndex) => (
+                      <ul key={columnIndex} className={styles.column}>
+                        {column.links.map((link) => (
+                          <li key={link.label}>
+                            <Link href={link.href} className={styles.megaLink}>
+                              <span>{link.label}</span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
                     ))}
-                  </ul>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </header>
 
-      {mobileOpen && (
-        <div className={styles.mobile}>
-          <div className={styles.container}>
-            <img src="/static/images/apolo.png" className={styles.logo} />
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            className={styles.mobileMenu}
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            exit={{
+              opacity: 0,
+            }}
+          >
+            <div className={`container ${styles.mobileHeader}`}>
+              <img
+                src="/static/images/logo-apolo-dark.svg"
+                alt="Apolo"
+                className={styles.mobileLogo}
+              />
 
-            <button onClick={() => setMobileOpen(false)}>
-              <CloseIcon />
-            </button>
-          </div>
+              <button onClick={() => setMobileOpen(false)}>
+                <img
+                  src="/static/images/icone.png"
+                  alt="Fechar"
+                  className={styles.icon}
+                />
+              </button>
+            </div>
 
-          <div className={styles.mobileContent}>
-            {NAV.map((item) => (
-              <a key={item.label} href="#">
-                {item.label}
-              </a>
-            ))}
+            <motion.div
+              className={`container ${styles.mobileContent}`}
+              initial={{
+                y: 20,
+                opacity: 0,
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+              }}
+              transition={{
+                delay: 0.1,
+              }}
+            >
+              {NAV.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={styles.mobileLink}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
 
-            <button className={styles.buttonPrimary}>
-              <MapIcon />
-              Distribuidores
-            </button>
-          </div>
-        </div>
-      )}
+              <button className={styles.mobileDistributorButton}>
+                <img
+                  src="/static/images/icone.png"
+                  alt=""
+                  className={styles.icon}
+                />
+                <span>Distribuidores</span>
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
