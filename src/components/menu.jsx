@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-import styles from "../styles/menu.module.css";
+import styles from "../styles/Menu.module.css";
 
 const NAV = [
   {
