@@ -1,9 +1,46 @@
+/*================ HEADING =================*/
+
+.heading {
+  max-width: 920px;
+  margin: 0 auto 90px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  color: #bff747;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.heading h2 {
+  margin: 0 auto 2rem;
+  max-width: 900px;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+
+.heading p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
 .timeline {
   padding: 9rem 0;
   background: #111318;
   overflow: hidden;
 }
-
 .eyebrow {
   margin-bottom: 1.5rem;
   color: #6ac17b;
@@ -12,7 +49,6 @@
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-
 .timeline h2 {
   max-width: 850px;
   color: #fff;
@@ -21,12 +57,10 @@
   letter-spacing: -0.03em;
   font-family: var(--font-display);
 }
-
 .wrapper {
   position: relative;
   margin-top: 5rem;
 }
-
 .fade {
   position: absolute;
   right: 0;
@@ -37,7 +71,6 @@
   z-index: 5;
   pointer-events: none;
 }
-
 .line {
   position: absolute;
   left: 0;
@@ -46,7 +79,6 @@
   height: 1px;
   background: rgba(255, 255, 255, 0.1);
 }
-
 .scroll {
   display: flex;
   gap: 3rem;
@@ -55,25 +87,8 @@
   scrollbar-width: none;
   position: relative;
 }
-
 .scroll::-webkit-scrollbar {
   display: none;
-}
-
-.card {
-  flex: none;
-  width: 300px;
-  position: relative;
-}
-
-.year {
-  display: block;
-  margin-bottom: 1.8rem;
-  color: #6ac17b;
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
 }
 
 .bar {
@@ -83,7 +98,6 @@
   background: rgba(255, 255, 255, 0.12);
   margin-bottom: 2.2rem;
 }
-
 .bar span {
   position: absolute;
   left: 0;
@@ -94,30 +108,107 @@
   transform: translateY(-50%);
   background: linear-gradient(135deg, #6ac17b, #4b5eaa);
 }
+.bottom span {
+  color: #fff;
+}
+.card {
+  position: relative;
+  height: 520px;
+  border-radius: 34px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  transition: 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  margin-bottom: 2rem;
+}
 
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  transition: 1.2s;
+}
+.card:hover::before {
+  transform: scale(1.12);
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.15));
+  transition: 0.6s;
+}
+.card:hover .overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.05));
+}
+.bottom {
+  position: relative;
+  z-index: 3;
+  padding: 55px;
+  transform: translateY(300px);
+  opacity: 0.2;
+  transition: 0.7s;
+}
+.card:hover .bottom {
+  transform: translateY(0);
+  opacity: 1;
+}
+.year {
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  font-size: 7rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.08);
+  transition: 0.7s;
+  z-index: 3;
+}
+.card:hover .year {
+  color: #bff747;
+  transform: translateY(-10px);
+}
+.number {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #bff747;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  z-index: 3;
+  transition: 0.5s;
+}
+.card:hover .number {
+  transform: rotate(360deg) scale(1.1);
+}
 .card h3 {
   margin-bottom: 1rem;
   color: #fff;
   font-size: 2rem;
   font-family: var(--font-display);
 }
-
 .card p {
   color: rgba(255, 255, 255, 0.55);
   line-height: 1.8;
   font-size: 0.95rem;
 }
-
 @media (max-width: 768px) {
   .timeline {
     padding: 6rem 0;
   }
-
   .scroll {
     padding: 0 1.5rem 3rem;
     gap: 2rem;
   }
-
   .fade {
     width: 80px;
   }

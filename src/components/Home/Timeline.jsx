@@ -2,34 +2,36 @@ import styles from "../../styles/Timeline.module.css";
 
 const events = [
   {
-    year: "Agrícola",
-    title: "Componentes para o campo",
-    desc: "Peças com foco em resistência mecânica, durabilidade, segurança e escoamento de fluidos.",
+    year: "2014",
+    step: "01",
+    title: "Fundação da Apolo",
+    date: "Março • 2014",
+    image: "/static/images/timeline-1.jpg",
+    desc: "Nasce a Apolo Tecnologia com foco em transformação de polímeros para a indústria brasileira.",
   },
   {
-    year: "Automotivo",
-    title: "Peças técnicas para veículos",
-    desc: "Componentes que atendem exigências de fadiga, conforto, instrumentação e materiais especiais.",
+    year: "2018",
+    step: "02",
+    title: "Expansão Industrial",
+    date: "Agosto • 2018",
+    image: "/static/images/timeline-2.jpg",
+    desc: "Ampliação do parque fabril e aquisição de novas injetoras para aumento da capacidade produtiva.",
   },
   {
-    year: "Implementos",
-    title: "Implementos rodoviários",
-    desc: "Soluções robustas para o transporte rodoviário — resistência, segurança e escoamentos.",
+    year: "2021",
+    step: "03",
+    title: "Automação",
+    date: "Novembro • 2021",
+    image: "/static/images/timeline-3.jpg",
+    desc: "Integração de robôs industriais e otimização dos processos produtivos.",
   },
   {
-    year: "Marco Additive",
-    title: "Impressão 3D",
-    desc: "Fabricação aditiva que constrói objetos tridimensionais camada por camada a partir de modelos digitais.",
-  },
-  {
-    year: "ISO 9001",
-    title: "Gestão da qualidade",
-    desc: "Sistema de Gestão da Qualidade certificado, garantindo padrões consistentes em toda a operação.",
-  },
-  {
-    year: "ISO 14001",
-    title: "Gestão ambiental",
-    desc: "Sistema de Gestão Ambiental certificado, com responsabilidade sobre o ciclo produtivo.",
+    year: "Hoje",
+    step: "04",
+    title: "5.000m² de tecnologia",
+    date: "Farroupilha • RS",
+    image: "/static/images/timeline-4.jpg",
+    desc: "Estrutura moderna preparada para atender projetos de alta complexidade em todo o Brasil.",
   },
 ];
 
@@ -37,28 +39,42 @@ export default function Timeline() {
   return (
     <section className={styles.timeline}>
       <div className="container">
-        <p className={styles.eyebrow}>— Onde atuamos</p>
+        <div className={styles.heading}>
+          <span className={styles.eyebrow}>— Nossa estrutura</span>
 
-        <h2>Soluções técnicas para indústrias exigentes.</h2>
-      </div>
+          <h2>Números que representam a força da Apolo Tecnologia.</h2>
 
-      <div className={styles.wrapper}>
-        <div className={styles.fade}></div>
+          <p>
+            Investimos continuamente em tecnologia, infraestrutura e pessoas
+            para entregar soluções confiáveis em transformação de plásticos para
+            diversos segmentos industriais.
+          </p>
+        </div>
 
-        <div className={styles.line}></div>
+        <div className={styles.wrapper}>
+          <div className={styles.line}></div>
 
-        <div className={styles.scroll}>
           {events.map((item) => (
-            <article key={item.year} className={styles.card}>
-              <span className={styles.year}>{item.year}</span>
+            <article
+              key={item.number}
+              className={styles.card}
+              style={{
+                backgroundImage: `url(${item.image})`,
+              }}
+            >
+              <div className={styles.overlay}></div>
 
-              <div className={styles.bar}>
-                <span></span>
+              <div className={styles.number}>{item.step}</div>
+
+              <div className={styles.bottom}>
+                <span>{item.date}</span>
+
+                <h3>{item.title}</h3>
+
+                <p>{item.desc}</p>
               </div>
 
-              <h3>{item.title}</h3>
-
-              <p>{item.desc}</p>
+              <div className={styles.year}>{item.year}</div>
             </article>
           ))}
         </div>

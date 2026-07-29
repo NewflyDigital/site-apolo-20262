@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import Menu from "../components/menu";
 import Rodape from "../components/rodape";
+import Timeline from "../components/Home/Timeline";
 
 import styles from "../styles/Empresa.module.css";
 
@@ -450,6 +451,7 @@ export default function Empresa() {
         </div>
       </section>
 
+      <Timeline />
       {/* ===================================================== */}
       {/* CTA */}
       {/* ===================================================== */}
