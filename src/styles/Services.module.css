@@ -38,6 +38,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   white-space: nowrap;
+  z-index: 123456;
 }
 
 .all span {

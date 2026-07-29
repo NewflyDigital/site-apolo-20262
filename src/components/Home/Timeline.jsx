@@ -17,7 +17,7 @@ const events = [
     desc: "Soluções robustas para o transporte rodoviário — resistência, segurança e escoamentos.",
   },
   {
-    year: "Marco 3D",
+    year: "Marco Additive",
     title: "Impressão 3D",
     desc: "Fabricação aditiva que constrói objetos tridimensionais camada por camada a partir de modelos digitais.",
   },

@@ -16,23 +16,19 @@ const NAV = [
         {
           links: [
             { label: "A Empresa", href: "/empresa#a-empresa" },
-            { label: "Grupo Marcopolo", href: "/empresa#grupo-marcopolo" },
-            { label: "Missão e Valores", href: "/empresa#missao" },
+
+            { label: "Princípios", href: "/empresa#principios" },
           ],
         },
         {
           links: [
             {
               label: "Certificações ISO 9001",
-              href: "/empresa#iso9001",
+              href: "/empresa#certificacoes",
             },
             {
               label: "Certificações ISO 14001",
-              href: "/empresa#iso14001",
-            },
-            {
-              label: "Qualidade",
-              href: "/empresa#qualidade",
+              href: "/empresa#certificacoes",
             },
           ],
         },
@@ -43,8 +39,8 @@ const NAV = [
               href: "/empresa#responsabilidade",
             },
             {
-              label: "Trabalhe Conosco",
-              href: "/empresa#trabalhe-conosco",
+              label: "Qualidade",
+              href: "/empresa#qualidade",
             },
           ],
         },
@@ -62,21 +58,16 @@ const NAV = [
           links: [
             { label: "Injeção", href: "/servicos#injecao" },
             { label: "Try-Out", href: "/servicos#tryout" },
+          ],
+        },
+        {
+          links: [
             { label: "Montagem", href: "/servicos#montagem" },
-          ],
-        },
-        {
-          links: [
             { label: "Produção", href: "/servicos#producao" },
-            { label: "Produtos", href: "/servicos#produtos" },
-            { label: "Ferramental", href: "/servicos#ferramental" },
           ],
         },
         {
-          links: [
-            { label: "Engenharia", href: "/servicos#engenharia" },
-            { label: "Automação", href: "/servicos#automacao" },
-          ],
+          links: [{ label: "Produtos", href: "/servicos#produtos" }],
         },
       ],
     },
@@ -89,44 +80,16 @@ const NAV = [
     mega: {
       columns: [
         {
+          links: [{ label: "Agrícola", href: "/aplicacoes#agricola" }],
+        },
+        {
+          links: [{ label: "Automotivo", href: "/aplicacoes#automotivo" }],
+        },
+        {
           links: [
-            { label: "Agrícola", href: "/aplicacoes#agricola" },
-            { label: "Automotivo", href: "/aplicacoes#automotivo" },
             {
               label: "Implementos Rodoviários",
               href: "/aplicacoes#implementos",
-            },
-          ],
-        },
-        {
-          links: [
-            {
-              label: "Resistência mecânica",
-              href: "/aplicacoes#resistencia",
-            },
-            {
-              label: "Fadiga e Durabilidade",
-              href: "/aplicacoes#fadiga",
-            },
-            {
-              label: "Segurança",
-              href: "/aplicacoes#seguranca",
-            },
-          ],
-        },
-        {
-          links: [
-            {
-              label: "Conforto",
-              href: "/aplicacoes#conforto",
-            },
-            {
-              label: "Instrumentação",
-              href: "/aplicacoes#instrumentacao",
-            },
-            {
-              label: "Escoamento de Fluidos",
-              href: "/aplicacoes#escoamento",
             },
           ],
         },
@@ -135,8 +98,8 @@ const NAV = [
   },
 
   {
-    label: "Marco 3D",
-    href: "/marco-3d",
+    label: "Marco Additive",
+    href: "/marcoadditive",
     sub: "Impressão 3D",
   },
 
@@ -224,12 +187,7 @@ export default function Header() {
 
           <div className={styles.actions}>
             <button className={styles.distributorsButton}>
-              <img
-                src="/static/images/location.png"
-                alt=""
-                className={styles.icon}
-              />
-              <span>Distribuidores</span>
+              <span>Orçamento</span>
             </button>
             {/*
             bOTÃO PROCURA

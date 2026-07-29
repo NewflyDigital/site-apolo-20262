@@ -271,7 +271,7 @@
 
 .videoSection {
   position: relative;
-  height: 720px;
+  height: 820px;
   overflow: hidden;
 }
 
@@ -314,6 +314,15 @@
   line-height: 1.9;
   color: rgba(255, 255, 255, 0.75);
   margin-bottom: 45px;
+}
+
+.eyebrow {
+  margin-bottom: 1.4rem;
+  color: #6ac17b;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
 }
 
 @media (max-width: 1100px) {

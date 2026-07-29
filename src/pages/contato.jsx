@@ -153,8 +153,6 @@ export default function Contato() {
 
               <div className={styles.heroRight}>
                 <div className={styles.contactCard}>
-                  <img src="/static/images/telefone.png" />
-
                   <small>Telefone</small>
 
                   <h3>(54) 3268-8300</h3>
@@ -163,8 +161,6 @@ export default function Contato() {
                 </div>
 
                 <div className={styles.contactCard}>
-                  <img src="/static/images/email.png" />
-
                   <small>E-mail</small>
 
                   <h3>contato@apolotec.com.br</h3>
@@ -173,8 +169,6 @@ export default function Contato() {
                 </div>
 
                 <div className={styles.contactCard}>
-                  <img src="/static/images/mapa.png" />
-
                   <small>Localização</small>
 
                   <h3>Farroupilha • RS</h3>

@@ -17,9 +17,7 @@ export default function Hero() {
       <div className={styles.content}>
         <div className={styles.container}>
           <div className={styles.box}>
-            <p className={styles.eyebrow}>
-              — Desde 2014 · Uma empresa do grupo Marcopolo
-            </p>
+            <p className={styles.eyebrow}>— Desde 2014</p>
 
             <h1>
               Injeção de peças

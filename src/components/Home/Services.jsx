@@ -3,22 +3,22 @@ import styles from "../../styles/Services.module.css";
 
 const cards = [
   {
-    tag: "Serviço",
-    title: "Try-Out",
-    desc: "Injetoras estrategicamente preparadas para atender uma ampla gama de tamanhos e complexidades de moldes durante a validação.",
-    img: "/static/images/card-digital.jpg",
+    tag: "Aplicação",
+    title: "Agrícola",
+    desc: "Componentes técnicos desenvolvidos para máquinas e implementos agrícolas, oferecendo elevada resistência mecânica, durabilidade e confiabilidade mesmo nas aplicações mais exigentes.",
+    img: "/static/images/aplicacoes-agricola.jpg",
   },
   {
-    tag: "Serviço",
-    title: "Montagem",
-    desc: "Equipe altamente qualificada oferecendo suporte abrangente na montagem de conjuntos, sub-conjuntos e acabamento final.",
-    img: "/static/images/card-robotics.jpg",
+    tag: "Aplicação",
+    title: "Automotivo",
+    desc: "Soluções em peças poliméricas para a indústria automotiva, com alto padrão de qualidade, precisão dimensional e desempenho para aplicações técnicas.",
+    img: "/static/images/aplicacoes-automotivo.jpg",
   },
   {
-    tag: "Serviço",
-    title: "Produção",
-    desc: "Linha de produção contemporânea e altamente otimizada, capaz de entregar volumes escaláveis com consistência de qualidade.",
-    img: "/static/images/card-energy.jpg",
+    tag: "Aplicação",
+    title: "Implementos Rodoviários",
+    desc: "Peças desenvolvidas para implementos rodoviários com foco em resistência estrutural, segurança, excelente acabamento e longa vida útil.",
+    img: "/static/images/aplicacoes-implementos.jpg",
   },
 ];
 
@@ -28,13 +28,13 @@ export default function Services() {
       <div className="container">
         <div className={styles.top}>
           <div>
-            <p className={styles.eyebrow}>— Nossos serviços</p>
+            <p className={styles.eyebrow}>— Setores atendidos</p>
 
-            <h2>Serviços completos em peças plásticas.</h2>
+            <h2>Aplicações para diferentes segmentos da indústria.</h2>
           </div>
 
-          <Link href="/servicos" className={styles.all}>
-            Ver todos os serviços
+          <Link href="/aplicacoes" className={styles.all}>
+            Ver todas as aplicações
             <span>↗</span>
           </Link>
         </div>

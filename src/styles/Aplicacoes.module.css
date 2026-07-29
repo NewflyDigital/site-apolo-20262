@@ -1,0 +1,393 @@
+/*================ HERO ================*/
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(5, 5, 5, 0.88) 0%,
+    rgba(5, 5, 5, 0.72) 45%,
+    rgba(5, 5, 5, 0.35) 100%
+  );
+}
+
+.heroGrid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 70px;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.heroContent {
+  max-width: 760px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 22px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--brand-green);
+}
+
+.heroContent h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3.6rem, 7vw, 6.4rem);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: #fff;
+  margin-bottom: 28px;
+}
+
+.heroContent h1 span {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroContent p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 42px;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 34px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.35s;
+}
+
+.primary {
+  background: var(--gradient-brand);
+  color: #fff;
+}
+
+.primary:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.secondary:hover {
+  transform: translateY(-6px);
+  border-color: var(--brand-green);
+}
+
+.heroCard {
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
+}
+
+.heroCard img {
+  width: 100%;
+  height: 430px;
+  display: block;
+  object-fit: cover;
+}
+
+.heroInfo {
+  padding: 34px;
+}
+
+.heroInfo small {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brand-green);
+  margin-bottom: 12px;
+}
+
+.heroInfo h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+
+.heroInfo p {
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/*================ SECTIONS ================*/
+
+.application {
+  padding: 140px 0;
+}
+
+.application:nth-child(even) {
+  background: var(--surface);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.reverse .grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.reverse .image {
+  order: 2;
+}
+
+.reverse .content {
+  order: 1;
+}
+
+.image {
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+}
+
+.image img {
+  width: 100%;
+  height: 620px;
+  display: block;
+  object-fit: cover;
+  transition: 1s;
+}
+
+.image:hover img {
+  transform: scale(1.08);
+}
+
+.content {
+  max-width: 620px;
+}
+
+.content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  margin: 20px 0 26px;
+}
+
+.content p {
+  font-size: 1.08rem;
+  line-height: 1.9;
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+
+.content ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 28px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.content li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.content li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--brand-green);
+}
+
+/*================ CTA ================*/
+
+.cta {
+  padding: 140px 0;
+  background: #0b0b0b;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  right: -240px;
+  top: -240px;
+  background: radial-gradient(circle, var(--brand-green), transparent 70%);
+  opacity: 0.08;
+}
+
+.ctaBox {
+  position: relative;
+  z-index: 2;
+  max-width: 920px;
+  margin: auto;
+  text-align: center;
+}
+
+.ctaBox h2 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: #fff;
+  margin: 22px 0 28px;
+}
+
+.ctaBox h2 span {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ctaBox p {
+  max-width: 720px;
+  margin: auto;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 46px;
+}
+
+/*================ RESPONSIVO ================*/
+
+@media (max-width: 1100px) {
+  .heroGrid,
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .reverse .image,
+  .reverse .content {
+    order: unset;
+  }
+
+  .hero {
+    padding: 140px 0 90px;
+    min-height: auto;
+  }
+
+  .heroGrid {
+    min-height: auto;
+  }
+
+  .heroCard {
+    max-width: 700px;
+    margin: auto;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .content ul {
+    grid-template-columns: 1fr;
+  }
+
+  .image img {
+    height: 420px;
+  }
+
+  .application {
+    padding: 90px 0;
+  }
+
+  .cta {
+    padding: 90px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 3rem;
+  }
+
+  .heroContent p,
+  .content p,
+  .ctaBox p {
+    font-size: 1rem;
+  }
+
+  .content h2 {
+    font-size: 2.5rem;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+  }
+
+  .heroCard img {
+    height: 300px;
+  }
+
+  .image img {
+    height: 300px;
+  }
+
+  .ctaBox h2 {
+    font-size: 2.8rem;
+  }
+}

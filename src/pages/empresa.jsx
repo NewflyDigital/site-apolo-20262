@@ -100,7 +100,7 @@ export default function Empresa() {
       {/* QUEM SOMOS */}
       {/* ===================================================== */}
 
-      <section id="quem-somos" className={styles.about}>
+      <section id="a-empresa" className={styles.about}>
         <div className="container">
           <div className={styles.aboutGrid}>
             <div className={styles.aboutImage}>
@@ -159,7 +159,7 @@ export default function Empresa() {
       </section>
 
       {/* CERTIFICAÇÕES */}
-
+      <a id="certificacoes" />
       <section className={styles.certifications}>
         <div className="container">
           <div className={styles.sectionHeader}>
@@ -177,7 +177,7 @@ export default function Empresa() {
           <div className={styles.certSlider}>
             <article className={styles.certCard}>
               <div className={styles.certImage}>
-                <img src="/static/images/iso9001.jpg" alt="ISO 9001" />
+                <img src="/static/images/iso9001.png" alt="ISO 9001" />
               </div>
 
               <div className={styles.certContent}>
@@ -204,7 +204,7 @@ export default function Empresa() {
 
             <article className={styles.certCard}>
               <div className={styles.certImage}>
-                <img src="/static/images/iso14001.jpg" alt="ISO 14001" />
+                <img src="/static/images/iso14001.png" alt="ISO 14001" />
               </div>
 
               <div className={styles.certContent}>
@@ -235,6 +235,8 @@ export default function Empresa() {
       {/* POLÍTICA */}
       {/* ===================================================== */}
 
+      <a id="qualidade" />
+      <a id="responsabilidade" />
       <section className={styles.policy}>
         <div className="container">
           <div className={styles.policyHeader}>
@@ -396,6 +398,7 @@ export default function Empresa() {
       {/* VALORES */}
       {/* ===================================================== */}
 
+      <a id="principios" />
       <section className={styles.values}>
         <div className="container">
           <div className={styles.sectionHeader}>
@@ -463,7 +466,9 @@ export default function Empresa() {
               projetos em produtos com qualidade, inovação e alto desempenho.
             </p>
 
-            <div className={styles.heroButtons}>
+            <div
+              className={`${styles.heroButtons} flex items-center justify-center`}
+            >
               <Link href="/contato" className={styles.primary}>
                 Solicitar orçamento
               </Link>

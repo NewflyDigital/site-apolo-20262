@@ -177,6 +177,11 @@ export default function Servicos() {
             </p>
           </div>
 
+          <a id="injecao" />
+          <a id="tryout" />
+          <a id="montagem" />
+          <a id="producao" />
+          <a id="produtos" />
           <div className={styles.servicesList}>
             {services.map((service, index) => (
               <Link

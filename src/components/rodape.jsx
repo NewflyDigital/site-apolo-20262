@@ -3,8 +3,8 @@ import styles from "../styles/Rodape.module.css";
 
 const FOOTER = {
   servicos: ["Injeção", "Try-Out", "Montagem", "Produção"],
-  aplicacoes: ["Agrícola", "Automotivo", "Implementos Rodoviários", "Marco 3D"],
-  institucional: ["A Empresa", "Grupo Marcopolo", "ISO 9001", "ISO 14001"],
+  aplicacoes: ["Agrícola", "Automotivo", "Implementos Rodoviários"],
+  institucional: ["A Empresa", "ISO 9001", "ISO 14001"],
   contato: ["Fale Conosco", "Trabalhe Conosco", "Localização", "Suporte"],
 };
 
@@ -60,7 +60,7 @@ export default function Rodape() {
         </div>
 
         <div className={styles.middle}>
-          <p>© 2026 APOLO TECNOLOGIA • UMA EMPRESA DO GRUPO MARCOPOLO</p>
+          <p>© 2026 APOLO TECNOLOGIA</p>
 
           <div className={styles.social}>
             <a href="#">

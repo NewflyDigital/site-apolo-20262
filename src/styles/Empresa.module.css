@@ -301,7 +301,9 @@
 
 .certImage img {
   width: 100%;
+  max-width: 100px;
   display: block;
+  margin: 42px 0px 0px 42px;
 }
 
 .certContent {

@@ -30,7 +30,7 @@ export default function AboutOne() {
           <div className={styles.content}>
             <p className={styles.eyebrow}>— Capacidade</p>
 
-            <h2>Até 1.400 toneladas de força de fechamento.</h2>
+            <h2>Marco Additive</h2>
 
             <p className={styles.description}>
               Nossas máquinas incorporam o que há de mais avançado em

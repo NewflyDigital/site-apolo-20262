@@ -16,9 +16,9 @@ const posts = [
   },
   {
     img: "/static/images/news-3.jpg",
-    cat: "Grupo Marcopolo",
+    cat: "Apolo Tecnologia ",
     date: "Institucional",
-    title: "Uma empresa do grupo Marcopolo, com solidez e alcance global.",
+    title: "Uma empresa com solidez e alcance global.",
   },
 ];
 
