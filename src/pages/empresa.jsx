@@ -9,10 +9,11 @@ import styles from "../styles/Empresa.module.css";
 
 export default function Empresa() {
   const heroSlides = [
-    "/static/images/global-campus.jpg",
-    "/static/images/news-1.jpg",
-    "/static/images/news-2.jpg",
-    "/static/videos/apolo.mp4",
+    "/static/images/fachada-apolo.jpg",
+    "/static/images/aerea-apolo.jpg",
+    "/static/images/Interna-Apolo-2.jpg",
+    "/static/images/Interna-Apolo.jpg",
+    "/static/videos/institucional.mp4",
   ];
 
   const [slide, setSlide] = useState(0);
@@ -106,7 +107,7 @@ export default function Empresa() {
           <div className={styles.aboutGrid}>
             <div className={styles.aboutImage}>
               <img
-                src="/static/images/global-campus.jpg"
+                src="/static/images/aerea-apolo.jpg"
                 alt="Apolo Tecnologia"
               />
             </div>
@@ -319,7 +320,7 @@ export default function Empresa() {
             <div className={styles.mvvLeft}>
               <div className={styles.mvvImage}>
                 <img
-                  src="/static/images/global-campus.jpg"
+                  src="/static/images/Interna-Apolo.jpg"
                   alt="Apolo Tecnologia"
                 />
               </div>

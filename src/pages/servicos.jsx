@@ -7,7 +7,7 @@ import styles from "../styles/Servicos.module.css";
 const applications = [
   {
     title: "Agrícola",
-    image: "/static/images/card-energy.jpg",
+    image: "/static/images/servicos-agro.jpg",
     items: [
       "Resistência mecânica",
       "Fadiga / Durabilidade",
@@ -20,7 +20,7 @@ const applications = [
   },
   {
     title: "Automotivo",
-    image: "/static/images/card-robotics.jpg",
+    image: "/static/images/servicos-auto.jpg",
     items: [
       "Resistência mecânica",
       "Fadiga / Durabilidade",
@@ -33,7 +33,7 @@ const applications = [
   },
   {
     title: "Implementos Rodoviários",
-    image: "/static/images/card-digital.jpg",
+    image: "/static/images/servicos-implementos.jpg",
     items: [
       "Resistência mecânica",
       "Fadiga / Durabilidade",
@@ -49,35 +49,35 @@ const applications = [
 const services = [
   {
     title: "Injeção",
-    image: "/static/images/servico-injecao.jpg",
+    image: "/static/images/servicos-injecao.jpg",
     href: "/contato",
     description:
       "Com capacidade de fechamento de até impressionantes 1.400 toneladas, as nossas máquinas incorporam o que há de mais avançado em tecnologia. Cada uma das nossas injetoras é equipada com sistemas robotizados de última geração, responsáveis pela extração precisa das peças e pela otimização contínua do processo produtivo, elevando eficiência, qualidade e produtividade.",
   },
   {
     title: "Try-Out",
-    image: "/static/images/servico-tryout.jpg",
+    image: "/static/images/servicos-tryout.jpg",
     href: "/contato",
     description:
       "Nossas máquinas injetoras estão estrategicamente preparadas para atender uma ampla gama de tamanhos de matrizes. Contamos com uma equipe experiente e com profundo conhecimento em diferentes matérias-primas, permitindo validar moldes, processos e produtos com segurança, rapidez e elevado padrão técnico.",
   },
   {
     title: "Montagem",
-    image: "/static/images/servico-montagem.jpg",
+    image: "/static/images/servicos-montagem.jpg",
     href: "/contato",
     description:
       "Dispomos de profissionais altamente qualificados que oferecem suporte ao cliente desde o desenvolvimento até a implementação completa dos produtos. Todo o processo é conduzido seguindo rigorosos padrões de qualidade certificados pela ISO 9001, garantindo confiabilidade, precisão e excelência em cada etapa.",
   },
   {
     title: "Produção",
-    image: "/static/images/servico-producao.jpg",
+    image: "/static/images/servicos-producao.jpg",
     href: "/contato",
     description:
       "Através de uma linha de produção moderna, automatizada e altamente otimizada, entregamos soluções para o segmento plástico com rapidez, flexibilidade e elevado controle de qualidade. Nossa estrutura permite atender diferentes demandas sem abrir mão da eficiência e da confiabilidade.",
   },
   {
     title: "Produtos",
-    image: "/static/images/servico-produtos.jpg",
+    image: "/static/images/servicos-produtos.jpg",
     href: "/contato",
     description:
       "Com tecnologia de ponta e uma estrutura industrial preparada para grandes volumes, produzimos peças técnicas para diversos segmentos industriais. Nossa flexibilidade permite atender projetos personalizados, mantendo sempre o compromisso com qualidade, inovação e desempenho.",
@@ -95,7 +95,7 @@ export default function Servicos() {
 
       <section className={styles.hero}>
         <img
-          src="/static/images/global-campus.jpg"
+          src="/static/images/Interna-Apolo-2.jpg"
           className={styles.heroBg}
           alt=""
         />
@@ -201,7 +201,7 @@ export default function Servicos() {
                   <p>{service.description}</p>
 
                   <div className={styles.serviceButton}>
-                    <span>Acessar serviço</span>
+                    <span>Entre em contato</span>
 
                     <img src="/static/images/icone.png" alt="" />
                   </div>

@@ -203,7 +203,7 @@ export default function Contato() {
               </div>
 
               <div className={styles.introImage}>
-                <img src="/static/images/global-campus.jpg" alt="" />
+                <img src="/static/images/aerea-apolo.jpg" alt="" />
               </div>
             </div>
           </div>

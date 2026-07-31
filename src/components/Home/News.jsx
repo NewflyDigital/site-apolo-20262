@@ -3,19 +3,19 @@ import styles from "../../styles/News.module.css";
 
 const posts = [
   {
-    img: "/static/images/news-1.jpg",
+    img: "/static/images/timeline-3.jpg",
     cat: "Injeção",
     date: "Capacidade",
     title: "Injetoras de até 1.400 toneladas para peças de alta complexidade.",
   },
   {
-    img: "/static/images/news-2.jpg",
+    img: "/static/images/timeline-2.jpg",
     cat: "Produção",
     date: "Otimização",
     title: "Linha de produção contemporânea e altamente otimizada.",
   },
   {
-    img: "/static/images/news-3.jpg",
+    img: "/static/images/timeline-4.jpg",
     cat: "Apolo Tecnologia ",
     date: "Institucional",
     title: "Uma empresa com solidez e alcance global.",

@@ -37,12 +37,12 @@ export default function AboutTwo() {
           </div>
 
           <div className={styles.image}>
-            <img src="/static/images/global-campus.jpg" alt="" />
+            <img src="/static/images/Interna-Apolo.jpg" alt="" />
           </div>
         </div>
 
         <div className={styles.banner}>
-          <img src="/static/images/smart-logistics.jpg" alt="" />
+          <img src="/static/images/aerea-apolo2.jpg" alt="" />
 
           <div className={styles.overlay}></div>
 

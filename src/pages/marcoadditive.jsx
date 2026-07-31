@@ -46,10 +46,7 @@ export default function MarcoAdditive() {
             </div>
 
             <div className={styles.heroCard}>
-              <img
-                src="/static/images/hero-industrial.jpg"
-                alt="MarcoAdditive"
-              />
+              <img src="/static/images/MarcoAdditive.jpg" alt="MarcoAdditive" />
 
               <div className={styles.heroInfo}>
                 <small>Impressão 3D</small>

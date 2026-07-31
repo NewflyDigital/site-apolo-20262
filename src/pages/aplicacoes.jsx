@@ -60,7 +60,7 @@ export default function Aplicacoes() {
 
       <section className={styles.hero}>
         <img
-          src="/static/images/hero-industrial.jpg"
+          src="/static/images/fachada-apolo.jpg"
           alt=""
           className={styles.heroImage}
         />
@@ -95,7 +95,7 @@ export default function Aplicacoes() {
             </div>
 
             <div className={styles.heroCard}>
-              <img src="/static/images/global-campus.jpg" alt="Aplicações" />
+              <img src="/static/images/estande-apolo.png" alt="Aplicações" />
 
               <div className={styles.heroInfo}>
                 <small>Setores Atendidos</small>

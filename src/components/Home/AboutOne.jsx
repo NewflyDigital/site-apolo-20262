@@ -15,7 +15,7 @@ export default function AboutOne() {
           <div className={styles.imageColumn}>
             <div className={styles.imageBox}>
               <img
-                src="/static/images/precision-gears.jpg"
+                src="/static/images/MarcoAdditive.jpg"
                 alt="Injetora de plástico de alta precisão"
               />
 

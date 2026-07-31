@@ -1,12 +1,16 @@
 import styles from "../../styles/Hero.module.css";
 import Link from "next/link";
 
+import { useState } from "react";
+
 export default function Hero() {
+  const [openVideo, setOpenVideo] = useState(false);
+
   return (
     <section className={styles.hero}>
       <div className={styles.background}>
         <img
-          src="/static/images/hero-industrial.jpg"
+          src="/static/images/fachada-apolo.jpg"
           alt="Planta industrial de injeção de plásticos"
         />
       </div>
@@ -17,8 +21,6 @@ export default function Hero() {
       <div className={styles.content}>
         <div className={styles.container}>
           <div className={styles.box}>
-            <p className={styles.eyebrow}>— Desde 2014</p>
-
             <h1>
               Injeção de peças
               <br />
@@ -32,10 +34,14 @@ export default function Hero() {
             </p>
 
             <div className={styles.buttons}>
-              <Link href="/empresa" className={styles.primary}>
-                Conheça nossas soluções
-                <span>↗</span>
-              </Link>
+              <button
+                type="button"
+                onClick={() => setOpenVideo(true)}
+                className={styles.primary}
+              >
+                Veja nosso vídeo
+                <span>▶</span>
+              </button>
 
               <Link href="/contato" className={styles.secondary}>
                 Fale com nosso time
@@ -51,6 +57,23 @@ export default function Hero() {
 
         <div className={styles.arrow}>↓</div>
       </div>
+
+      {openVideo && (
+        <div className={styles.videoModal} onClick={() => setOpenVideo(false)}>
+          <div className={styles.videoBox} onClick={(e) => e.stopPropagation()}>
+            <button
+              className={styles.closeVideo}
+              onClick={() => setOpenVideo(false)}
+            >
+              ✕
+            </button>
+
+            <video controls autoPlay playsInline className={styles.video}>
+              <source src="/static/videos/institucional.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
